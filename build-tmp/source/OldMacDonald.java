@@ -1,3 +1,19 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class OldMacDonald extends PApplet {
+
 // Cow c = new Cow("cow","moo");
 // Chick k = new Chick("chick", "cheep");
 // Pig p = new Pig("pig", "oink");
@@ -55,7 +71,7 @@ class Chick implements Animal
 	public Chick(String type, String soundP, String soundK)
 	{
 		myType = type;
-		if ((float)Math.random() < 0.5) {mySound =  soundP;} else {mySound = soundK;}
+		if ((float)Math.random() < 0.5f) {mySound =  soundP;} else {mySound = soundK;}
  	}
 	public Chick()
 	{
@@ -100,4 +116,13 @@ class Farm
 		}
 		System.out.println("The cow is known as " + ((NamedCow)aBunchOfAnimals[0]).getName());
 	}
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "OldMacDonald" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }
